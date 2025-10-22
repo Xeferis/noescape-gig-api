@@ -4,181 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoEscape Gig API</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-        
-        .endpoint {
-            background: #f7f7f7;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .endpoint code {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .gig-card {
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .gig-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .gig-card h3 {
-            color: #764ba2;
-            margin-bottom: 10px;
-        }
-        
-        .gig-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .gig-detail {
-            font-size: 0.9em;
-        }
-        
-        .gig-detail strong {
-            color: #667eea;
-        }
-        
-        .button {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-        
-        .button:hover {
-            background: #764ba2;
-        }
-        
-        .json-output {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        
-        footer {
-            background: #f7f7f7;
-            padding: 20px;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid #e0e0e0;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎸 NoEscape Gig API</h1>
-            <p>Your one-stop API for all NoEscape gig information</p>
-        </header>
-        
-        <div class="content">
-            <div class="section">
-                <h2>📡 API Endpoints</h2>
-                <div class="endpoint">
-                    <strong>Get All Gigs:</strong>
-                    <code>GET /gigs.json</code>
-                    <p>Returns all upcoming and past gigs in JSON format</p>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>🎵 Upcoming Gigs</h2>
-                <div id="gigs-container">
-                    <p>Loading gigs...</p>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>📋 Sample Response</h2>
-                <pre id="json-output" class="json-output">Loading...</pre>
-            </div>
-        </div>
-        
-        <footer>
-            <p>NoEscape Gig API &copy; 2024 | Powered by GitHub Pages</p>
-        </footer>
-    </div>
     
+            
+    <div id="json-output" class="json-output">
+        Loading...
+    </div>
     <script>
         // Fetch and display gig data
         async function loadGigs() {
@@ -186,52 +18,13 @@
                 const response = await fetch('gigs.json');
                 const data = await response.json();
                 
-                // Display gigs
-                displayGigs(data.gigs);
-                
                 // Display JSON
                 displayJSON(data);
             } catch (error) {
                 console.error('Error loading gigs:', error);
-                document.getElementById('gigs-container').innerHTML = 
-                    '<p style="color: red;">Error loading gigs. Please try again later.</p>';
                 document.getElementById('json-output').textContent = 
                     'Error loading JSON data';
             }
-        }
-        
-        function displayGigs(gigs) {
-            const container = document.getElementById('gigs-container');
-            
-            if (!gigs || gigs.length === 0) {
-                container.innerHTML = '<p>No gigs scheduled at the moment.</p>';
-                return;
-            }
-            
-            container.innerHTML = gigs.map(gig => `
-                <div class="gig-card">
-                    <h3>${gig.title}</h3>
-                    <p>${gig.description}</p>
-                    <div class="gig-details">
-                        <div class="gig-detail">
-                            <strong>📍 Venue:</strong> ${gig.venue}
-                        </div>
-                        <div class="gig-detail">
-                            <strong>📅 Date:</strong> ${gig.date}
-                        </div>
-                        <div class="gig-detail">
-                            <strong>🕐 Time:</strong> ${gig.time}
-                        </div>
-                        <div class="gig-detail">
-                            <strong>📌 Location:</strong> ${gig.location}
-                        </div>
-                        <div class="gig-detail">
-                            <strong>💵 Price:</strong> ${gig.price}
-                        </div>
-                    </div>
-                    ${gig.ticketUrl ? `<a href="${gig.ticketUrl}" class="button" target="_blank">Get Tickets</a>` : ''}
-                </div>
-            `).join('');
         }
         
         function displayJSON(data) {
