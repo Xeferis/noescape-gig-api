@@ -1,0 +1,40 @@
+{
+  "gigs": [
+    {
+      "id": 1,
+      "title": "Live at The Blue Note",
+      "artist": "NoEscape",
+      "venue": "The Blue Note",
+      "date": "2024-12-15",
+      "time": "20:00",
+      "location": "New York, NY",
+      "description": "An evening of original music and classic covers",
+      "ticketUrl": "https://example.com/tickets/1",
+      "price": "$25"
+    },
+    {
+      "id": 2,
+      "title": "Summer Festival Performance",
+      "artist": "NoEscape",
+      "venue": "Central Park",
+      "date": "2024-06-20",
+      "time": "18:30",
+      "location": "New York, NY",
+      "description": "Open-air concert featuring new album tracks",
+      "ticketUrl": "https://example.com/tickets/2",
+      "price": "Free"
+    },
+    {
+      "id": 3,
+      "title": "Acoustic Session",
+      "artist": "NoEscape",
+      "venue": "The Coffeehouse",
+      "date": "2024-07-10",
+      "time": "19:00",
+      "location": "Brooklyn, NY",
+      "description": "Intimate acoustic performance in a cozy setting",
+      "ticketUrl": "https://example.com/tickets/3",
+      "price": "$15"
+    }
+  ]
+}
