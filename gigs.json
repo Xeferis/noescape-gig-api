@@ -1,8 +1,8 @@
 {
   "gigs": [
-    {name: "Echoes of the end Tour - Support", date: "2025-06-28", location: "Kulturzentrum Färberei, Universitätsplatz 10, 34127 Kassel", description: "Clubshow", link: "https://atokbookingevents.ticket.io/?onlyTag=echoes&utm_source=Band&utm_medium=Website&utm_campaign=ECHOES_FTM_WS"},
-    {name: "Junge Kunst Bühne", date: "2025-06-27", location: "Innenhof Dock 4, Untere Karlsstraße 4, 34117 Kassel", description: "Open-Air - Eintritt frei!", link: "https://www.instagram.com/p/DKpOCxysbO6/?igsh=MXJ5eW03aWJpancyNg=="},
-    {name: "Steinberg Festival", date: "2025-07-18", location: "Sportplatz Saigerhütte, 06333 Hettstedt", description: "Festival", link: "https://www.steinbergfestival.de/"},
-    {name: "Bûche, Mono & NoEscape", date: "2025-10-18", location: "Färberei Kassel", description: "Club", link: ""},
+    {"name": "Echoes of the end Tour - Support", "date": "2025-06-28", "location": "Kulturzentrum Färberei, Universitätsplatz 10, 34127 Kassel", "description": "Clubshow", "link": "https://atokbookingevents.ticket.io/?onlyTag=echoes&utm_source=Band&utm_medium=Website&utm_campaign=ECHOES_FTM_WS"},
+    {"name": "Junge Kunst Bühne", "date": "2025-06-27", "location": "Innenhof Dock 4, Untere Karlsstraße 4, 34117 Kassel", "description": "Open-Air - Eintritt frei!", "link": "https://www.instagram.com/p/DKpOCxysbO6/?igsh=MXJ5eW03aWJpancyNg=="},
+    {"name": "Steinberg Festival", "date": "2025-07-18", "location": "Sportplatz Saigerhütte, 06333 Hettstedt", "description": "Festival", "link": "https://www.steinbergfestival.de/"},
+    {"name": "Bûche, Mono & NoEscape", "date": "2025-10-18", "location": "Färberei Kassel", "description": "Club", "link": ""}
   ]
 }
